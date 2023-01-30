@@ -22,7 +22,7 @@ jobs:
           $GHDL --version
       - name: formal verification
         run: |
-          sby --yosys "yosys -m ghdl" -f spi_master.sby
+          sby --yosys "yosys -m ghdl" -f moving_average.sby
           
       - name: check results
         run: |
