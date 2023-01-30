@@ -4,9 +4,9 @@ task_cover
 
 [options]
 task_bmc: mode prove
-task_bmc: depth 10	
+task_bmc: depth 20	
 task_cover: mode cover
-task_cover: depth 10
+task_cover: depth 20
 
 [engines]
 task_bmc: smtbmc
