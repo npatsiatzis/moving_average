@@ -1,0 +1,46 @@
+library ieee;
+use ieee.numeric_std.all;
+
+vunit formal_test(moving_average(rtl)) {
+
+
+
+	default clock is rising_edge(i_clk);
+
+	signal random_data: std_ulogic_vector(g_i_W -1 downto 0);
+	attribute anyconst : boolean;
+	attribute anyconst of random_data : signal is true;
+
+
+	--#####################################################
+
+	-------------------
+	--ASSERT PROPERTIES
+	-------------------
+
+	check_addr_pointer: assert always {r_addr = 0 or r_addr = prev(r_addr)+1};
+	check_r_sub: assert always (({i_ce = '1' and i_sample = random_data} |-> next[2](r_sub = resize(signed(random_data),r_sub'length) - signed(prev(r_sample_delN,1))))abort i_rst = '1');
+	check_r_acc: assert always (({i_ce = '1' and i_sample = random_data} |-> next[3](r_acc = signed((signed(random_data) + signed(prev(r_acc,1)) -signed(prev(r_sample_delN,2))))))abort i_rst='1');
+	check_result: assert always (({i_ce = '1' and i_sample = random_data} |-> next[3](o_result = std_ulogic_vector(shift_right(signed((signed(random_data) + signed(prev(r_acc,1)) -signed(prev(r_sample_delN,2)))),g_m_w))))abort i_rst='1');
+	--#####################################################
+
+	-------------------
+	--ASSUME PROPERTIES
+	-------------------
+	assume {i_rst = '1'};
+	assume always {i_ce = '1'};
+
+
+	assume {i_rst ='1'; i_sample = random_data and i_ce = '1'};
+	assume always {unsigned(i_sample) >= 0 and unsigned(i_sample) < 2**(g_i_W-1)};
+	assume {unsigned(random_data) >= 0 and unsigned(random_data) < 2**(g_i_W-1)};
+	--#####################################################
+
+	-------------------
+	--COVER PROPERTIES
+	-------------------
+	--witness cover statements to avoid vacuous success
+	cover_r_sub: cover {i_ce = '1' and i_sample = random_data; true[*2]; (r_sub = resize(signed(random_data),r_sub'length) - signed(prev(r_sample_delN,1)))};
+	cover_r_acc: cover {i_ce = '1' and i_sample = random_data; true[*3]; r_acc = signed((signed(random_data) + signed(prev(r_acc,1)) -signed(prev(r_sample_delN,2))))};
+	cover_result: cover {i_ce = '1' and i_sample = random_data; true[*3]; (o_result = std_ulogic_vector(shift_right(signed((signed(random_data) + signed(prev(r_acc,1)) -signed(prev(r_sample_delN,2)))),g_m_w)))};
+}

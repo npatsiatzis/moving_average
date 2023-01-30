@@ -1,0 +1,21 @@
+[tasks]
+task_bmc
+task_cover
+
+[options]
+task_bmc: mode prove
+task_bmc: depth 10	
+task_cover: mode cover
+task_cover: depth 10
+
+[engines]
+task_bmc: smtbmc
+task_cover: smtbmc
+
+[script]
+ghdl --std=08 -gg_i_W=8 -gg_m_W=4 -gg_o_W=12 moving_average.vhd moving_average.psl -e moving_average
+prep -top moving_average
+
+[files]
+moving_average.psl
+moving_average.vhd

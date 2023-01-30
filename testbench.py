@@ -20,7 +20,6 @@ class crv_inputs(crv.Randomized):
 		crv.Randomized.__init__(self)
 		self.data = data
 		self.add_rand("data",list(range(0,2**(g_i_W-1))))
-		# self.add_rand("data",list(range(-2**int(g_i_W/2), 2**int(g_i_W/2),1)))
 
 
 covered_value = []
