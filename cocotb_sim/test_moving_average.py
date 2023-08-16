@@ -13,7 +13,7 @@ rtl_dir = tests_dir                                    #path to hdl folder where
       
 
 #run tests with generic values for length
-@pytest.mark.parametrize("g_i_W", [str(i) for i in range(6,9,1)])
+@pytest.mark.parametrize("g_i_W", [str(i) for i in range(4,7,1)])
 @pytest.mark.parametrize("g_m_W", [str(i) for i in range(2,5,1)])
 def test_spi(g_i_W,g_m_W):
 
