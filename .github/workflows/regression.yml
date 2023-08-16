@@ -39,4 +39,4 @@ jobs:
     
     - name: regression
       run: |
-        SIM=ghdl pytest -n auto -o log_cli=True --junitxml=test-results.xml --cocotbxml=test-cocotb.xml sim/test_moving_average.py
+        SIM=ghdl pytest -n auto -o log_cli=True --junitxml=test-results.xml --cocotbxml=test-cocotb.xml cocotb_sim/test_moving_average.py
