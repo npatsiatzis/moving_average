@@ -10,9 +10,9 @@ use ieee.numeric_std.all;
 
 entity moving_average is
 	generic(
-		g_i_W : natural :=8;										--input width
+		g_i_W : natural :=6;										--input width
 		g_m_w : natural :=4;										--memory address width
-		g_o_w : natural :=12);										--output width
+		g_o_w : natural :=10);										--output width
 	port(						
 		i_clk : in std_ulogic;									--system clock
 		i_rst : in std_ulogic;									--reset
