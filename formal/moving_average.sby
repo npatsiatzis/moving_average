@@ -18,4 +18,4 @@ prep -top moving_average
 
 [files]
 moving_average.psl
-../rtl/moving_average.vhd
+../rtl/VHDL/moving_average.vhd

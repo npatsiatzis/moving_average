@@ -42,6 +42,10 @@ report_power -file $outputDir/post_route_power.rpt
 report_drc -file $outputDir/post_imp_drc.rpt
 write_verilog -force $outputDir/bft_impl_netlist.v
 write_xdc -no_fixed_only -force $outputDir/bft_impl.xdc
+
+set WNS [get_property SLACK [get_timing_paths -max_paths 1 -nworst 1 -setup]]
+puts "Post Route WNS = $WNS"
+
 #
 # STEP#5: generate a bitstream
 # 

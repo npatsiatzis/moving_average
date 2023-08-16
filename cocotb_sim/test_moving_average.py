@@ -20,7 +20,7 @@ def test_spi(g_i_W,g_m_W):
     module = "testbench"
     toplevel = "moving_average"   
     vhdl_sources = [
-        os.path.join(rtl_dir, "../rtl/moving_average.vhd"),
+        os.path.join(rtl_dir, "../rtl/VHDL/moving_average.vhd"),
         ]
 
 
