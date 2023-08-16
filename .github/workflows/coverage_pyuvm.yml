@@ -1,4 +1,4 @@
-name: CoCoTB Functional Coverage
+name: pyuvm Functional Coverage
 on: [push]
 jobs:
   run_tests:
@@ -27,6 +27,7 @@ jobs:
         pip install pytest
         pip install pytest-parallel
         pip install pytest-xdist
+        pip install pyuvm
     
     
     - uses: ghdl/setup-ghdl-ci@nightly
@@ -39,7 +40,8 @@ jobs:
     
     - name: regression
       run: |
-        cd pyuvm_sim/ && make
+        cd pyuvm_sim/        
+        make 
       
     - name: Functional Coverage
       run: |
