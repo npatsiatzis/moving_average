@@ -1,14 +1,16 @@
 ![example workflow](https://github.com/npatsiatzis/moving_average/actions/workflows/regression.yml/badge.svg)
 ![example workflow](https://github.com/npatsiatzis/moving_average/actions/workflows/coverage.yml/badge.svg)
+![example workflow](https://github.com/npatsiatzis/moving_average/actions/workflows/regression_pyuvm.yml/badge.svg)
+![example workflow](https://github.com/npatsiatzis/moving_average/actions/workflows/coverage_pyuvm.yml/badge.svg)
 ![example workflow](https://github.com/npatsiatzis/moving_average/actions/workflows/formal.yml/badge.svg)
 
 ### moving-average filter RTL implementation
 
+-- RTL code in:
+- [VHDL](https://github.com/npatsiatzis/moving_average/tree/main/rtl/VHDL)
+- [SystemVerilog](https://github.com/npatsiatzis/moving_average/tree/main/rtl/SystemVerilog)
 
-- CoCoTB testbench for functional verification
-    - $ make
-- CoCoTB-test unit testing to exercise the CoCoTB tests across a range of values for the generic parameters
-    - $  SIM=ghdl pytest -n auto -o log_cli=True --junitxml=test-results.xml --cocotbxml=test-cocotb.xml
-- formal verification using SymbiYosys (sby), (properties specified in PSL)
-    - $ make formal
-
+-- Functional verification with methodologies:
+- [cocotb](https://github.com/npatsiatzis/moving_average/tree/main/cocotb_sim)
+- [pyuvm](https://github.com/npatsiatzis/moving_average/tree/main/pyuvm_sim)
+- [verilator](https://github.com/npatsiatzis/moving_average/tree/main/verilator_sim)
