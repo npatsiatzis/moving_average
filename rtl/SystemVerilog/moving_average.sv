@@ -8,8 +8,8 @@
 
 module moving_average
     #(
-        parameter int G_I_W = 6,
-        parameter int G_M_W = 4,
+        parameter int G_I_W /*verilator public*/ = 6,
+        parameter int G_M_W /*verilator public*/ = 4,
         parameter int G_O_W = 10
     )
 
@@ -21,7 +21,7 @@ module moving_average
         output logic [G_O_W -1 : 0] o_result
     );
 
-    logic [G_I_W - 1 : 0] mem [2**G_M_W];
+    logic [G_I_W - 1 : 0] mem [2**G_M_W] = '{default: 0};
 
     // only need 1 pointer for BRAM-based shift register
     logic [G_M_W - 1 : 0] r_addr;
@@ -56,7 +56,9 @@ module moving_average
     end
 
     always_ff @(posedge i_clk) begin : BRAM_read
-        if(i_ce) begin
+        if(i_rst)
+            r_sample_delayed <= 0;
+        else if(i_ce) begin
             r_sample_delayed <= mem[r_addr];
         end
     end
