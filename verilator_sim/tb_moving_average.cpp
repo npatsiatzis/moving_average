@@ -386,7 +386,8 @@ int main(int argc, char** argv, char** env) {
     }
     scb->checkPhase();
 
-    // VerilatedCov::write();
+    Verilated::mkdir("logs");
+    VerilatedCov::write("logs/coverage.dat");
     m_trace->close();  
     exit(EXIT_SUCCESS);
 }
