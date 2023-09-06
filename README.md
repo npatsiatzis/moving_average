@@ -3,6 +3,8 @@
 ![example workflow](https://github.com/npatsiatzis/moving_average/actions/workflows/regression_pyuvm.yml/badge.svg)
 ![example workflow](https://github.com/npatsiatzis/moving_average/actions/workflows/coverage_pyuvm.yml/badge.svg)
 ![example workflow](https://github.com/npatsiatzis/moving_average/actions/workflows/formal.yml/badge.svg)
+![example workflow](https://github.com/npatsiatzis/moving_average/actions/workflows/verilator_regression.yml/badge.svg)
+[![codecov](https://codecov.io/gh/npatsiatzis/moving_average/graph/badge.svg?token=413OMOMIEO)](https://codecov.io/gh/npatsiatzis/moving_average)
 
 ### moving-average filter RTL implementation
 

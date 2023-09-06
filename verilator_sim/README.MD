@@ -1,3 +1,5 @@
+![example workflow](https://github.com/npatsiatzis/moving_average/actions/workflows/verilator_regression.yml/badge.svg)
+
 ### moving-average filter RTL implementation
 
 
