@@ -70,8 +70,8 @@ class OutCoverage {
         }
 
         bool is_full_coverage(){
-            return cvg_size == (1 << (Vmoving_average_moving_average::G_I_W))-1;
-            // return coverage.size() == (1 << (Vmoving_average_moving_average::G_I_W));
+            return cvg_size == (1 << (Vmoving_average_moving_average::g_i_W))-1;
+            // return coverage.size() == (1 << (Vmoving_average_moving_average::g_i_W));
         }
 };
 
@@ -110,7 +110,7 @@ class Scb {
                 // ma_sum += *i;
                 ma_sum += result[i];
             }
-            ma_result = ma_sum / (1 << Vmoving_average_moving_average::G_M_W);
+            ma_result = ma_sum / (1 << Vmoving_average_moving_average::g_m_W);
             return ma_result;
         }
 
@@ -133,8 +133,8 @@ class Scb {
 
         void checkPhase(){
             int expected_result = 0;
-            for (int i = (1 << Vmoving_average_moving_average::G_M_W); i<out_vec.size()-1; i++) {
-                expected_result = slice_and_ma(in_vec,i - (1 << Vmoving_average_moving_average::G_M_W)+1, i);
+            for (int i = (1 << Vmoving_average_moving_average::g_m_W); i<out_vec.size()-1; i++) {
+                expected_result = slice_and_ma(in_vec,i - (1 << Vmoving_average_moving_average::g_m_W)+1, i);
 
                 if(expected_result != out_vec[i]){
                     std::cout << "Test Failure!" << std::endl;
@@ -282,10 +282,10 @@ class Sequence{
             in = new InTx();
             // std::shared_ptr<InTx> in(new InTx());
             if(new_tx_ready == 1){
-                in->i_sample = rand() % (1 << (Vmoving_average_moving_average::G_I_W -1));   
+                in->i_sample = rand() % (1 << (Vmoving_average_moving_average::g_i_W -1));   
 
                 while(cvg->is_covered(in->i_sample) == false){
-                    in->i_sample = rand() % (1 << (Vmoving_average_moving_average::G_I_W -1));  
+                    in->i_sample = rand() % (1 << (Vmoving_average_moving_average::g_i_W -1));  
 
                 }
                 return in;
