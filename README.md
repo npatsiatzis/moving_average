@@ -42,7 +42,7 @@ This is the tree view of the strcture of the repo.
 ├── <font size = "4"><b><a href="https://github.com/npatsiatzis/moving_average/tree/main/verilator_sim">verilator_sim</a></b></font>
 │   ├── Makefile
 │   └── verilator tb
-└── <font size = "4"><b><a href="https://github.com/npatsiatzis/fifo_synchronous/tree/main/formal">formal</a></b></font>
+└── <font size = "4"><b><a href="https://github.com/npatsiatzis/moving_average/tree/main/formal">formal</a></b></font>
     ├── Makefile
     └── PSL properties file, scripts
 </pre>
