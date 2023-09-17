@@ -17,6 +17,9 @@
 - [pyuvm](https://github.com/npatsiatzis/moving_average/tree/main/pyuvm_sim)
 - [verilator](https://github.com/npatsiatzis/moving_average/tree/main/verilator_sim)
 
+### Repo Structure
+
+This is a short tabular description of the contents of each folder in the repo.
 
 | Folder | Description |
 | ------ | ------ |
@@ -27,8 +30,8 @@
 | [verilator_sim](https://github.com/npatsiatzis/moving_average/tree/main/verilator_sim) | Functional Verification with Verilator (C++ based) |
 | [formal](https://github.com/npatsiatzis/moving_average/tree/main/formal) | Formal Verification using  PSL properties and [YoysHQ/sby](https://github.com/YosysHQ/oss-cad-suite-build) |
 
-
-This is the <!-- tree view of the strcture of the repo.
+<!-- 
+This is the tree view of the strcture of the repo.
 <pre>
 <font size = "2">
 .
