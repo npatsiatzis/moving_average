@@ -22,7 +22,7 @@
    Number of bits of samples.
 2. **Tap**
    
-   A FIR's taps are coefficient values. The number of taps is the amount of memory (length) needed to implement the filter.
+   A FIR's taps are the coefficient values. The number of taps is the amount of memory (length) needed to implement the filter.
 
 ### 3. APPLICABLE DOCUMENTS 
 
