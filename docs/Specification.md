@@ -20,6 +20,7 @@
 
    Width refers to the length in bits of the sample data words.
 1. **length**
+
    Length refers to the number of sample words that are considered using the filter function to produce a specific filter output value.
 
 ### 3. APPLICABLE DOCUMENTS 
